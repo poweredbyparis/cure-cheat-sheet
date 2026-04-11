@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Unofficial Cure Cheat Sheet</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+</head>
+
+<body data-theme="dark">
+
+  <!-- header -->
+  <header id="header">
+    <div class="header-left">
+      <div id="user-count">Active Doctors: 0</div>
+    </div>
+
+    <div class="header-center">
+      <div class="logo-wrap">
+        <img src="img/logo-white.webp" id="logo-img">
+        <span class="version-badge">v1.0.0</span>
+      </div>
+    </div>
+
+    <div class="header-right">
+      <button id="theme-switch">
+        <span class="material-symbols-rounded">emoji_objects</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- main -->
+  <main id="main">
+    <aside class="panel left-panel">
+      <div class="panel-header">
+        <h2>SYMPTOMS</h2>
+        <div id="filters-tabs"></div>
+      </div>
+      <div id="filters" class="panel-content"></div>
+    </aside>
+
+    <section class="panel right-panel">
+      <div class="panel-header">
+        <h2>CONDITIONS</h2>
+      </div>
+      <div id="results" class="panel-content"></div>
+    </section>
+  </main>
+
+  <!-- footer -->
+  <footer id="footer">
+    <div id="footer-link">Copyright / About</div>
+  </footer>
+
+  <!-- modal -->
+  <div id="footer-modal" class="modal hidden">
+    <div class="modal-content">
+      <span id="modal-close">&times;</span>
+
+      <h4>About</h4>
+      <p> This cheat sheet was created as an educational tool for <b>Cure - A Hospital Simulator</b>, aimed at supporting more efficient diagnosis and treating patients in the game. </p>
+      <p> The information presented is derived from in-game observation, testing, and community-verified patterns. While every effort has been made to ensure accuracy, no official confirmation has been provided by the game's developers or moderators. </p>
+      
+      <h4>Copyright & Disclaimer</h4>
+      <p> Cure - A Hospital Simulator, including its name, assets, and related materials, are the property of their respective owners. This project does not claim ownership of any game content. </p>
+      <p> This tool is an independent, fan-made resource and is not affiliated with, endorsed by, or connected to the developers or publishers of the game. </p>
+      <p> The layout, structure, and supporting logic of this cheat sheet are original works created for this project with the help of articifial intelligence. </p>
+      
+      <h4>Credits</h4>
+      <p> Special thanks to <a href="https://www.twitch.tv/emryswastaken">EmrysWasTaken</a> and the Cure community who contributed directly or indirectly. </p>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
