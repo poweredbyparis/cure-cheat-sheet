@@ -1,5 +1,7 @@
 # Unofficial Cure Cheat Sheet
 
+[Unofficial Cure Cheat Sheet](https://poweredbyparis.github.io/cure-cheat-sheet/)
+
 A web tool for efficiently identifying conditions and treatments in *Cure - A Hospital Simulator* based on symptom selection.
 
 ---
