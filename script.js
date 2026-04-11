@@ -267,7 +267,7 @@ themeSwitch.onclick=()=>{
 
 /* steam live users */
 
-const STEAM_APP_ID = "APP_ID";
+const STEAM_APP_ID = "2786550";
 const userCountEl = document.getElementById("user-count");
 
 let lastCount = null;
@@ -275,7 +275,7 @@ let lastCount = null;
 async function fetchSteamPlayers() {
   try {
     const res = await fetch(
-      `https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=${STEAM_APP_ID}`
+      `https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=${STEAM_APP_ID}` 
     );
     const data = await res.json();
     return data?.response?.player_count ?? null;
