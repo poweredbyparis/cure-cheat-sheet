@@ -265,6 +265,56 @@ themeSwitch.onclick=()=>{
 };
 
 
+/* steam live users */
+
+const STEAM_APP_ID = "APP_ID";
+const userCountEl = document.getElementById("user-count");
+
+let lastCount = null;
+
+async function fetchSteamPlayers() {
+  try {
+    const res = await fetch(
+      `https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=${STEAM_APP_ID}`
+    );
+    const data = await res.json();
+    return data?.response?.player_count ?? null;
+  } catch (err) {
+    return null;
+  }
+}
+
+function animateCount(from, to, duration = 800) {
+  const start = performance.now();
+
+  function tick(now) {
+    const progress = Math.min((now - start) / duration, 1);
+    const value = Math.floor(from + (to - from) * progress);
+
+    userCountEl.textContent = `Active Doctors: ${value.toLocaleString()}`;
+
+    if (progress < 1) requestAnimationFrame(tick);
+  }
+
+  requestAnimationFrame(tick);
+}
+
+async function updateSteamCounter() {
+  const count = await fetchSteamPlayers();
+  if (count == null) return;
+
+  if (lastCount == null) {
+    lastCount = count;
+    userCountEl.textContent = `Active Doctors: ${count.toLocaleString()}`;
+    return;
+  }
+
+  animateCount(lastCount, count);
+  lastCount = count;
+}
+
+updateSteamCounter();
+setInterval(updateSteamCounter, 60000);
 
 /* init */
 renderFilters();
