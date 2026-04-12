@@ -183,6 +183,10 @@ function render(){
     const div = document.createElement("div");
     div.className="condition";
 
+    const symTitle = document.createElement("div");
+    symTitle.className = "section-title";
+    symTitle.textContent = "Symptoms";
+
     const symList = document.createElement("div");
     symList.className="symptom-list";
 
@@ -201,6 +205,17 @@ function render(){
 
       symList.appendChild(item);
     });
+     /* condition title */
+    const condTitle = document.createElement("div");
+    condTitle.className = "section-title";
+    condTitle.textContent = "Condition";
+
+    /* treatment title */
+    const treatTitle = document.createElement("div");
+    treatTitle.className = "section-title";
+    treatTitle.textContent = "Treatment";
+
+
 
     const condName = document.createElement("div");
     condName.textContent = titleCase(c.name);
@@ -224,10 +239,17 @@ function render(){
       treatList.appendChild(item);
     });
 
+    div.appendChild(symTitle);
     div.appendChild(symList);
+
     div.appendChild(document.createElement("br"));
+
+    div.appendChild(condTitle);
     div.appendChild(condName);
+
     div.appendChild(document.createElement("br"));
+
+    div.appendChild(treatTitle);
     div.appendChild(treatList);
 
     resultsDiv.appendChild(div);
