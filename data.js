@@ -784,7 +784,7 @@ const conditions = [
     symptoms: [
       { name: "abdominal pain", requires: null },
       { name: "dizziness", requires: null },
-      { name: "shortness of breath", requires: null },
+      { name: "shortness of breath", requires: "stethoscope" },
       { name: "sickle cell disease", requires: "blood test" }
     ],
     treatment: ["blood", "painkiller"]
@@ -901,5 +901,42 @@ const conditions = [
       { name: "positive cocaine test", requires: "urine test" }
     ],
     treatment: ["hydration", "painkiller", "sedative"]
+  },
+    {
+    name: "urinary tract infection",
+    symptoms: [
+      { name: "burning urination", requires: null },
+      { name: "frequent urination", requires: null },
+      { name: "abdominal pain", requires: null },
+      { name: "fever", requires: "bp cuff" },
+      { name: "bloody urine", requires: "urine test" },
+      { name: "high urine bacteria", requires: "urine test" },
+      { name: "pain over bladder", requires: "ct scan" }
+    ],
+    treatment: ["painkiller", "antibiotic"]
+  },
+    {
+    name: "drug induced agitation",
+    symptoms: [
+      { name: "restlessness", requires: null },
+      { name: "agitation", requires: null },
+      { name: "sweating", requires: null },
+      { name: "nausea", requires: "null" },
+      { name: "vomiting", requires: "null" },
+      { name: "hallucinations", requires: "null" },
+      { name: "positive drug test", requires: "urine test" }
+    ],
+    treatment: ["sedative", "education"]
+  },
+    {
+    name: "lyme disease",
+    symptoms: [
+      { name: "painful rash", requires: null },
+      { name: "body aches", requires: null },
+      { name: "fever", requires: "bp cuff" },
+      { name: "positive lyme test", requires: "blood test" },
+      { name: "tick bite", requires: "null" }
+    ],
+    treatment: ["antibiotic"]
   }
 ];
