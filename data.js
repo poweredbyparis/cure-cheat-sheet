@@ -906,12 +906,12 @@ const conditions = [
     name: "urinary tract infection",
     symptoms: [
       { name: "burning urination", requires: null },
-      { name: "frequent urination", requires: null },
       { name: "abdominal pain", requires: null },
-      { name: "fever", requires: "bp cuff" },
-      { name: "bloody urine", requires: "urine test" },
+      { name: "frequent urination", requires: null },
+      { name: "pain over bladder", requires: "stethoscope" },
+      { name: "fever", requires: "fever" },
       { name: "high urine bacteria", requires: "urine test" },
-      { name: "pain over bladder", requires: "ct scan" }
+      { name: "bloody urine", requires: "urine test" }
     ],
     treatment: ["painkiller", "antibiotic"]
   },
@@ -938,5 +938,19 @@ const conditions = [
       { name: "tick bite", requires: "null" }
     ],
     treatment: ["antibiotic"]
+  },
+    {
+    name: "rhabdo",
+    symptoms: [
+      { name: "chest muscle ache", requires: null },
+      { name: "upper arm muscle ache", requires: null },
+      { name: "forearm muscle ache", requires: null },
+      { name: "back pain", requires: null },
+      { name: "lower leg pain", requires: null },
+      { name: "thigh pain", requires: null },
+      { name: "muscle breakdown", requires: "blood test" },
+      { name: "bloody urine", requires: "urine test" }
+    ],
+    treatment: ["painkiller", "hydration"]
   }
 ];
