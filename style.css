@@ -18,11 +18,10 @@ html, body {
 }
 
 h1, h2 {
-  font-family: "Bebas Neue", sans-serif;
+  font-family: "Oswald", sans-serif;
   font-weight: bold;
-  letter-spacing: 0.15rem;
-  font-size: 28px;
-  margin: 0 0 10px 0;
+  font-size: 22x;
+  margin: 0 0 15px 0;
 }
 
 /* links */
@@ -353,9 +352,8 @@ button.active {
 }
 
 .modal-content h4 {
-  font-family: "Bebas Neue", sans-serif;
+  font-family: "Oswald", sans-serif;
   font-size: 16px;
-  letter-spacing: 0.1rem;
   margin-bottom: -8px;
 }
 

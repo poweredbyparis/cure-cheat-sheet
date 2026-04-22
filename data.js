@@ -952,5 +952,16 @@ const conditions = [
       { name: "bloody urine", requires: "urine test" }
     ],
     treatment: ["painkiller", "hydration"]
+  },
+    {
+    name: "cocaine overdose",
+    symptoms: [
+      { name: "chest pain", requires: null },
+      { name: "sweating", requires: null },
+      { name: "restlessness", requires: null },
+      { name: "high blood pressure", requires: "bp cuff" },
+      { name: "positive cocaine test", requires: "urine test" }
+    ],
+    treatment: ["painkiller", "hydration"]
   }
 ];
