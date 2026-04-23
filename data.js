@@ -963,5 +963,15 @@ const conditions = [
       { name: "positive cocaine test", requires: "urine test" }
     ],
     treatment: ["painkiller", "hydration"]
+  },
+    {
+    name: "weed hyperemesis",
+    symptoms: [
+      { name: "vomiting", requires: null },
+      { name: "low blood pressure", requires: "bp cuff" },
+      { name: "positive weed test", requires: "urine test" },
+      { name: "irregular bowel sounds", requires: "stethoscope" }
+    ],
+    treatment: ["anti nausea", "hydration", "sedative"]
   }
 ];
