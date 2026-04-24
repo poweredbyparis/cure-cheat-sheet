@@ -54,7 +54,7 @@ const conditions = [
     name: "back spasm",
     symptoms: [
       { name: "back pain", requires: null },
-      { name: "back stiffness", requires: null }
+      { name: "back stiffness", requires: "stethoscope" }
     ],
     treatment: ["painkiller"]
   },
@@ -90,7 +90,7 @@ const conditions = [
       { name: "constipation", requires: null },
       { name: "loss of appetite", requires: null },
       { name: "blocked bowel", requires: "ct scan" },
-      { name: "enlarged abdomen", requires: "xray" },
+      { name: "enlarged bowel", requires: "xray" },
       { name: "tense abdomen", requires: "stethoscope" }
     ],
     treatment: ["hydration", "antibiotic", "painkiller"]
@@ -304,9 +304,9 @@ const conditions = [
     name: "gonorrhea",
     symptoms: [
       { name: "burning urination", requires: null },
-      { name: "bloody urine", requires: null },
+      { name: "bloody urine", requires: "urine test" },
       { name: "fever", requires: "bp cuff" },
-      { name: "gonorrhea urine", requires: "urine test" }
+      { name: "gonorrhea in urine", requires: "urine test" }
     ],
     treatment: ["antibiotic", "education"]
   },
@@ -314,7 +314,7 @@ const conditions = [
     name: "gout",
     symptoms: [
       { name: "foot pain", requires: null },
-      { name: "forearm swelling", requires: "stethoscope" }
+      { name: "foot swelling", requires: "stethoscope" }
     ],
     treatment: ["hydration", "painkiller", "education"]
   },
@@ -351,7 +351,7 @@ const conditions = [
   {
     name: "head cut",
     symptoms: [
-      { name: "hand bleeding", requires: null },
+      { name: "head bleeding", requires: null },
       { name: "head pain", requires: null }
     ],
     treatment: ["bandage", "painkiller"]
@@ -420,7 +420,7 @@ const conditions = [
       { name: "abdominal pain", requires: null },
       { name: "infected belly button", requires: "stethoscope" }
     ],
-    treatment: ["antibiotic"]
+    treatment: ["antibiotic", "painkiller"]
   },
   {
     name: "infectious diarrhea",
@@ -440,12 +440,12 @@ const conditions = [
     symptoms: [
       { name: "abdominal pain", requires: null },
       { name: "nausea", requires: null },
-      { name: "bloody urine", requires: null },
-      { name: "high white cell count", requires: null },
-      { name: "stones in kidney", requires: null },
-      { name: "pain over sides", requires: null }
+      { name: "bloody urine", requires: "urine test" },
+      { name: "high white cell count", requires: "blood test" },
+      { name: "stones in kidney", requires: "ct scan" },
+      { name: "pain over sides", requires: "stethoscope" }
     ],
-    treatment: ["unknown"]
+    treatment: ["hydration", "painkiller"]
   },
   {
     name: "lower leg bruising",
@@ -472,7 +472,7 @@ const conditions = [
       { name: "light sensitivity", requires: null },
       { name: "nausea", requires: null },
       { name: "vomiting", requires: null },
-      { name: "normal brain", requires: "xray" }
+      { name: "normal brain", requires: "ct scan" }
     ],
     treatment: ["anti nausea", "hydration", "painkiller"]
   },
@@ -510,12 +510,12 @@ const conditions = [
     name: "mild hand fracture left",
     symptoms: [
       { name: "hand pain", requires: null },
-      { name: "hand bruising", requires: null },
+      { name: "hand bruising", requires: "stethoscope" },
       { name: "hand swelling", requires: "stethoscope" },
       { name: "bone displacement", requires: "xray" },
-      { name: "moderate fracture line", requires: "xray" }
+      { name: "mild fracture line", requires: "xray" }
     ],
-    treatment: ["cast", "painkiller"]
+    treatment: ["cast"]
   },
   {
     name: "mild toothache",
@@ -543,7 +543,7 @@ const conditions = [
       { name: "sore throat", requires: null },
       { name: "runny nose", requires: null },
       { name: "fatigue", requires: null },
-      { name: "normal xray", requires: "xray" },
+      { name: "normal chest xray", requires: "xray" },
       { name: "no fever", requires: "bp cuff" }
     ],
     treatment: ["painkiller", "decongestant"]
@@ -563,8 +563,8 @@ const conditions = [
     name: "moderate foot fracture right",
     symptoms: [
       { name: "foot pain", requires: null },
-      { name: "foot bruising", requires: null },
-      { name: "foot bleeding", requires: "stethoscope" },
+      { name: "foot bruising", requires: "stethoscope" },
+      { name: "foot bleeding", requires: null },
       { name: "foot swelling", requires: "stethoscope" },
       { name: "bone displacement", requires: "xray" },
       { name: "moderate fracture line", requires: "xray" }
@@ -575,8 +575,8 @@ const conditions = [
     name: "moderate lower leg fracture left",
     symptoms: [
       { name: "lower leg pain", requires: null },
-      { name: "lower leg bruising", requires: null },
-      { name: "lower leg bleeding", requires: "stethoscope" },
+      { name: "lower leg bruising", requires: "stethoscope" },
+      { name: "lower leg bleeding", requires: null },
       { name: "lower leg swelling", requires: "stethoscope" },
       { name: "bone displacement", requires: "xray" },
       { name: "moderate fracture line", requires: "xray" }
@@ -587,8 +587,8 @@ const conditions = [
     name: "moderate thigh fracture right",
     symptoms: [
       { name: "thigh pain", requires: null },
-      { name: "thigh bruising", requires: null },
-      { name: "thigh bleeding", requires: "stethoscope" },
+      { name: "thigh bruising", requires: "stethoscope" },
+      { name: "thigh bleeding", requires: null },
       { name: "thigh swelling", requires: "stethoscope" },
       { name: "bone displacement", requires: "xray" },
       { name: "moderate fracture line", requires: "xray" }
@@ -667,7 +667,7 @@ const conditions = [
     treatment: ["sedative", "education"]
   },
   {
-    name: "pelvic cut",
+    name: "pelvis cut",
     symptoms: [
       { name: "pelvic bleeding", requires: null },
       { name: "pelvic pain", requires: null }
@@ -685,7 +685,7 @@ const conditions = [
     treatment: ["painkiller"]
   },
   {
-    name: "pelvic gunshot",
+    name: "pelvis gunshot",
     symptoms: [
       { name: "pelvic bleeding", requires: null },
       { name: "pelvic pain", requires: null }
@@ -785,9 +785,9 @@ const conditions = [
       { name: "abdominal pain", requires: null },
       { name: "dizziness", requires: null },
       { name: "shortness of breath", requires: "stethoscope" },
-      { name: "sickle cell disease", requires: "blood test" }
+      { name: "sickled blood cells", requires: "blood test" }
     ],
-    treatment: ["blood", "painkiller"]
+    treatment: ["hydration", "blood", "painkiller"]
   },
   {
     name: "sinusitis",
@@ -909,7 +909,7 @@ const conditions = [
       { name: "abdominal pain", requires: null },
       { name: "frequent urination", requires: null },
       { name: "pain over bladder", requires: "stethoscope" },
-      { name: "fever", requires: "fever" },
+      { name: "fever", requires: "bp cuff" },
       { name: "high urine bacteria", requires: "urine test" },
       { name: "bloody urine", requires: "urine test" }
     ],
@@ -921,9 +921,9 @@ const conditions = [
       { name: "restlessness", requires: null },
       { name: "agitation", requires: null },
       { name: "sweating", requires: null },
-      { name: "nausea", requires: "null" },
-      { name: "vomiting", requires: "null" },
-      { name: "hallucinations", requires: "null" },
+      { name: "nausea", requires: null },
+      { name: "vomiting", requires: null },
+      { name: "hallucinations", requires: null },
       { name: "positive drug test", requires: "urine test" }
     ],
     treatment: ["sedative", "education"]
@@ -935,7 +935,7 @@ const conditions = [
       { name: "body aches", requires: null },
       { name: "fever", requires: "bp cuff" },
       { name: "positive lyme test", requires: "blood test" },
-      { name: "tick bite", requires: "null" }
+      { name: "tick bite", requires: "stethoscope" }
     ],
     treatment: ["antibiotic"]
   },
@@ -954,17 +954,6 @@ const conditions = [
     treatment: ["painkiller", "hydration"]
   },
     {
-    name: "cocaine overdose",
-    symptoms: [
-      { name: "chest pain", requires: null },
-      { name: "sweating", requires: null },
-      { name: "restlessness", requires: null },
-      { name: "high blood pressure", requires: "bp cuff" },
-      { name: "positive cocaine test", requires: "urine test" }
-    ],
-    treatment: ["painkiller", "hydration"]
-  },
-    {
     name: "weed hyperemesis",
     symptoms: [
       { name: "vomiting", requires: null },
@@ -973,5 +962,572 @@ const conditions = [
       { name: "irregular bowel sounds", requires: "stethoscope" }
     ],
     treatment: ["anti nausea", "hydration", "sedative"]
+  },
+    {
+    name: "insomnia",
+    symptoms: [
+      { name: "restlessness", requires: null },
+      { name: "can't sleep", requires: null },
+      { name: "anxiety", requires: null },
+      { name: "fatigue", requires: null },
+      { name: "mild headache", requires: null },
+      { name: "negative drug test", requires: "urine test" }
+    ],
+    treatment: ["education", "sedative"]
+  },
+  {
+    name: "appendicitis",
+    symptoms: [
+      { name: "abdominal pain", requires: null },
+      { name: "nausea", requires: null },
+      { name: "vomiting", requires: null },
+      { name: "loss of appetite", requires: null },
+      { name: "fever", requires: "bp cuff" },
+      { name: "inflamed appendix", requires: "ct scan" },
+      { name: "right lower abdominal pain", requires: "stethoscope" },
+      { name: "high white cell count", requires: "blood test" }
+    ],
+    treatment: ["hydration", "antibiotic", "painkiller"]
+  },
+  {
+    name: "gallstones",
+    symptoms: [
+      { name: "abdominal pain", requires: null },
+      { name: "nausea", requires: null },
+      { name: "vomiting", requires: null },
+      { name: "fever", requires: "bp cuff" },
+      { name: "inflamed gallbladder", requires: "ct scan" },
+      { name: "right upper abdominal pain", requires: "stethoscope" },
+      { name: "high white cell count", requires: "blood test" }
+    ],
+    treatment: ["hydration", "painkiller"]
+  },
+  {
+    name: "pancreatitis",
+    symptoms: [
+      { name: "abdominal pain", requires: null },
+      { name: "nausea", requires: null },
+      { name: "vomiting", requires: null },
+      { name: "loss of appetite", requires: null },
+      { name: "fever", requires: "bp cuff" },
+      { name: "inflamed pancreas", requires: "ct scan" },
+      { name: "middle upper abdominal pain", requires: "stethoscope" }
+    ],
+    treatment: ["hydration", "painkiller", "anti nausea"]
+  },
+  {
+    name: "perforated bowel",
+    symptoms: [
+      { name: "abdominal pain", requires: null },
+      { name: "constipation", requires: null },
+      { name: "hole in intenstine", requires: "ct scan" },
+      { name: "tense abdomen", requires: "stethoscope" }
+    ],
+    treatment: ["painkiller", "anti nausea", "antibiotic"]
+  },
+  {
+    name: "meningitis",
+    symptoms: [
+      { name: "severe headache", requires: null },
+      { name: "stiff neck", requires: null },
+      { name: "light sensitivity", requires: null },
+      { name: "fatigue", requires: null },
+      { name: "high white cell count", requires: "blood test" },
+      { name: "fever", requires: "bp cuff" },
+      { name: "neck stiffness", requires: "stethoscope" },
+      { name: "normal brain", requires: "ct scan" }
+    ],
+    treatment: ["antibiotic", "painkiller", "hydration"]
+  },
+  {
+    name: "chlamydia",
+    symptoms: [
+      { name: "burning urination", requires: null },
+      { name: "bloody urine", requires: "urine test" },
+      { name: "chlamydia in urine", requires: "urine test" }
+    ],
+    treatment: ["antibiotic", "education"]
+  },
+  {
+    name: "mild hand fracture right",
+    symptoms: [
+      { name: "hand pain", requires: null },
+      { name: "hand bruising", requires: "stethoscope" },
+      { name: "hand swelling", requires: "stethoscope" },
+      { name: "bone displacement", requires: "xray" },
+      { name: "mild fracture line", requires: "xray" }
+    ],
+    treatment: ["cast"]
+  },
+  {
+    name: "mild foot fracture right",
+    symptoms: [
+      { name: "foot pain", requires: null },
+      { name: "foot bruising", requires: "stethoscope" },
+      { name: "foot swelling", requires: "stethoscope" },
+      { name: "bone displacement", requires: "xray" },
+      { name: "mild fracture line", requires: "xray" }
+    ],
+    treatment: ["cast"]
+  },
+  {
+    name: "mild thigh fracture right",
+    symptoms: [
+      { name: "thigh pain", requires: null },
+      { name: "thigh bruising", requires: "stethoscope" },
+      { name: "thigh swelling", requires: "stethoscope" },
+      { name: "bone displacement", requires: "xray" },
+      { name: "mild fracture line", requires: "xray" }
+    ],
+    treatment: ["cast"]
+  },
+  {
+    name: "mild lower leg fracture right",
+    symptoms: [
+      { name: "lower leg pain", requires: null },
+      { name: "lower leg bruising", requires: "stethoscope" },
+      { name: "lower leg swelling", requires: "stethoscope" },
+      { name: "bone displacement", requires: "xray" },
+      { name: "mild fracture line", requires: "xray" }
+    ],
+    treatment: ["cast"]
+  },
+  {
+    name: "mild forearm fracture right",
+    symptoms: [
+      { name: "forearm pain", requires: null },
+      { name: "forearm bruising", requires: "stethoscope" },
+      { name: "forearm swelling", requires: "stethoscope" },
+      { name: "bone displacement", requires: "xray" },
+      { name: "mild fracture line", requires: "xray" }
+    ],
+    treatment: ["cast"]
+  },
+  {
+    name: "mild upper arm fracture right",
+    symptoms: [
+      { name: "upper arm pain", requires: null },
+      { name: "upper arm bruising", requires: "stethoscope" },
+      { name: "upper arm swelling", requires: "stethoscope" },
+      { name: "bone displacement", requires: "xray" },
+      { name: "mild fracture line", requires: "xray" }
+    ],
+    treatment: ["cast"]
+  },
+  {
+    name: "moderate hand fracture right",
+    symptoms: [
+      { name: "hand pain", requires: null },
+      { name: "hand bruising", requires: "stethoscope" },
+      { name: "hand bleeding", requires: null },
+      { name: "hand swelling", requires: "stethoscope" },
+      { name: "bone displacement", requires: "xray" },
+      { name: "moderate fracture line", requires: "xray" }
+    ],
+    treatment: ["cast", "painkiller"]
+  },
+  {
+    name: "moderate lower leg fracture right",
+    symptoms: [
+      { name: "lower leg pain", requires: null },
+      { name: "lower leg bruising", requires: "stethoscope" },
+      { name: "lower leg bleeding", requires: null },
+      { name: "lower leg swelling", requires: "stethoscope" },
+      { name: "bone displacement", requires: "xray" },
+      { name: "moderate fracture line", requires: "xray" }
+    ],
+    treatment: ["cast", "painkiller"]
+  },
+  {
+    name: "moderate forearm fracture right",
+    symptoms: [
+      { name: "forearm pain", requires: null },
+      { name: "forearm bruising", requires: "stethoscope" },
+      { name: "forearm bleeding", requires: null },
+      { name: "forearm swelling", requires: "stethoscope" },
+      { name: "bone displacement", requires: "xray" },
+      { name: "moderate fracture line", requires: "xray" }
+    ],
+    treatment: ["cast", "painkiller"]
+  },
+  {
+    name: "moderate upper arm fracture right",
+    symptoms: [
+      { name: "upper arm pain", requires: null },
+      { name: "upper arm bruising", requires: "stethoscope" },
+      { name: "upper arm bleeding", requires: null },
+      { name: "upper arm swelling", requires: "stethoscope" },
+      { name: "bone displacement", requires: "xray" },
+      { name: "moderate fracture line", requires: "xray" }
+    ],
+    treatment: ["cast", "painkiller"]
+  },
+  {
+    name: "mild foot fracture left",
+    symptoms: [
+      { name: "foot pain", requires: null },
+      { name: "foot bruising", requires: "stethoscope" },
+      { name: "foot swelling", requires: "stethoscope" },
+      { name: "bone displacement", requires: "xray" },
+      { name: "mild fracture line", requires: "xray" }
+    ],
+    treatment: ["cast"]
+  },
+  {
+    name: "mild thigh fracture left",
+    symptoms: [
+      { name: "thigh pain", requires: null },
+      { name: "thigh bruising", requires: "stethoscope" },
+      { name: "thigh swelling", requires: "stethoscope" },
+      { name: "bone displacement", requires: "xray" },
+      { name: "mild fracture line", requires: "xray" }
+    ],
+    treatment: ["cast"]
+  },
+  {
+    name: "mild lower leg fracture left",
+    symptoms: [
+      { name: "lower leg pain", requires: null },
+      { name: "lower leg bruising", requires: "stethoscope" },
+      { name: "lower leg swelling", requires: "stethoscope" },
+      { name: "bone displacement", requires: "xray" },
+      { name: "mild fracture line", requires: "xray" }
+    ],
+    treatment: ["cast"]
+  },
+  {
+    name: "mild forearm fracture left",
+    symptoms: [
+      { name: "forearm pain", requires: null },
+      { name: "forearm bruising", requires: "stethoscope" },
+      { name: "forearm swelling", requires: "stethoscope" },
+      { name: "bone displacement", requires: "xray" },
+      { name: "mild fracture line", requires: "xray" }
+    ],
+    treatment: ["cast"]
+  },
+  {
+    name: "mild upper arm fracture left",
+    symptoms: [
+      { name: "upper arm pain", requires: null },
+      { name: "upper arm bruising", requires: "stethoscope" },
+      { name: "upper arm swelling", requires: "stethoscope" },
+      { name: "bone displacement", requires: "xray" },
+      { name: "mild fracture line", requires: "xray" }
+    ],
+    treatment: ["cast"]
+  },
+  {
+    name: "moderate hand fracture left",
+    symptoms: [
+      { name: "hand pain", requires: null },
+      { name: "hand bruising", requires: "stethoscope" },
+      { name: "hand bleeding", requires: null },
+      { name: "hand swelling", requires: "stethoscope" },
+      { name: "bone displacement", requires: "xray" },
+      { name: "moderate fracture line", requires: "xray" }
+    ],
+    treatment: ["cast", "painkiller"]
+  },
+  {
+    name: "moderate foot fracture left",
+    symptoms: [
+      { name: "foot pain", requires: null },
+      { name: "foot bruising", requires: "stethoscope" },
+      { name: "foot bleeding", requires: null },
+      { name: "foot swelling", requires: "stethoscope" },
+      { name: "bone displacement", requires: "xray" },
+      { name: "moderate fracture line", requires: "xray" }
+    ],
+    treatment: ["cast", "painkiller"]
+  },
+  {
+    name: "moderate thigh fracture left",
+    symptoms: [
+      { name: "thigh pain", requires: null },
+      { name: "thigh bruising", requires: "stethoscope" },
+      { name: "thigh bleeding", requires: null },
+      { name: "thigh swelling", requires: "stethoscope" },
+      { name: "bone displacement", requires: "xray" },
+      { name: "moderate fracture line", requires: "xray" }
+    ],
+    treatment: ["cast", "painkiller"]
+  },
+  {
+    name: "moderate forearm fracture left",
+    symptoms: [
+      { name: "forearm pain", requires: null },
+      { name: "forearm bruising", requires: "stethoscope" },
+      { name: "forearm bleeding", requires: null },
+      { name: "forearm swelling", requires: "stethoscope" },
+      { name: "bone displacement", requires: "xray" },
+      { name: "moderate fracture line", requires: "xray" }
+    ],
+    treatment: ["cast", "painkiller"]
+  },
+  {
+    name: "sepsis",
+    symptoms: [
+      { name: "fatigue", requires: null },
+      { name: "body aches", requires: null },
+      { name: "loss of appetite", requires: null },
+      { name: "low blood pressure", requires: "bp cuff" },
+      { name: "fever", requires: "bp cuff" },
+      { name: "high white cell count", requires: "blood test" },
+      { name: "bacteria in blood", requires: "blood test" }
+    ],
+    treatment: ["antibiotic", "hydration"]
+  },
+  {
+    name: "pcp overdose",
+    symptoms: [
+      { name: "agitation", requires: null },
+      { name: "sweating", requires: null },
+      { name: "high heart rate", requires: "bp cuff" },
+      { name: "positive pcp test", requires: "urine test" },
+      { name: "normal blood", requires: "blood test" },
+      { name: "no pneumonia", requires: "xray" },
+      { name: "normal brain", requires: "ct scan" }
+    ],
+    treatment: ["sedative", "education"]
+  },
+  {
+    name: "psychotic agitation",
+    symptoms: [
+      { name: "restlessness", requires: null },
+      { name: "agitation", requires: null },
+      { name: "anxiety", requires: null },
+      { name: "hallucinations", requires: null },
+      { name: "negative drug test", requires: "urine test" },
+      { name: "normal brain", requires: "ct scan" }
+    ],
+    treatment: ["sedative"]
+  },
+  {
+    name: "anxiety disorder",
+    symptoms: [
+      { name: "anxiety", requires: null },
+      { name: "restlessness", requires: null },
+      { name: "abdominal pain", requires: null },
+      { name: "shortness of breath", requires: "stethoscope" },
+      { name: "negative drug test", requires: "urine test" },
+      { name: "high heart rate", requires: "bp cuff" }
+    ],
+    treatment: ["sedative", "education"]
+  },
+  {
+    name: "hypochondria",
+    symptoms: [
+      { name: "anxiety", requires: null },
+      { name: "no fever", requires: "bp cuff" },
+      { name: "normal body scan", requires: "ct scan" },
+      { name: "normal blood", requires: "blood test" }
+    ],
+    treatment: ["education"]
+  },
+  {
+    name: "opiod intoxication",
+    symptoms: [
+      { name: "loss of consciousness", requires: null },
+      { name: "sedated", requires: null },
+      { name: "pinpoint pupils", requires: null },
+      { name: "positive opiod test", requires: "urine test" },
+      { name: "normal blood", requires: "blood test" }
+    ],
+    treatment: ["hydration", "education"]
+  },
+  {
+    name: "head gunshot",
+    symptoms: [
+      { name: "head bleeding", requires: null },
+      { name: "head pain", requires: null }
+    ],
+    treatment: ["bandage", "blood", "painkiller"]
+  },
+  {
+    name: "neck gunshot",
+    symptoms: [
+      { name: "neck bleeding", requires: null },
+      { name: "neck pain", requires: null }
+    ],
+    treatment: ["bandage", "blood", "painkiller"]
+  },
+  {
+    name: "chest gunshot",
+    symptoms: [
+      { name: "chest bleeding", requires: null },
+      { name: "chest pain", requires: null }
+    ],
+    treatment: ["bandage", "blood", "painkiller"]
+  },
+  {
+    name: "abdomen gunshot",
+    symptoms: [
+      { name: "abdominal bleeding", requires: null },
+      { name: "abdominal pain", requires: null }
+    ],
+    treatment: ["bandage", "blood", "painkiller"]
+  },
+  {
+    name: "hand gunshot",
+    symptoms: [
+      { name: "hand bleeding", requires: null },
+      { name: "hand pain", requires: null }
+    ],
+    treatment: ["bandage", "blood", "painkiller"]
+  },
+  {
+    name: "head stabbing",
+    symptoms: [
+      { name: "head bleeding", requires: null },
+      { name: "head pain", requires: null }
+    ],
+    treatment: ["bandage", "blood", "painkiller"]
+  },
+  {
+    name: "abdomen stabbing",
+    symptoms: [
+      { name: "abdominal bleeding", requires: null },
+      { name: "abdominal pain", requires: null }
+    ],
+    treatment: ["bandage", "blood", "painkiller"]
+  },
+  {
+    name: "pelvis stabbing",
+    symptoms: [
+      { name: "pelvic bleeding", requires: null },
+      { name: "pelvic pain", requires: null }
+    ],
+    treatment: ["bandage", "blood", "painkiller"]
+  },
+  {
+    name: "hand stabbing",
+    symptoms: [
+      { name: "hand bleeding", requires: null },
+      { name: "hand pain", requires: null }
+    ],
+    treatment: ["bandage", "blood", "painkiller"]
+  },
+  {
+    name: "foot stabbing",
+    symptoms: [
+      { name: "foot bleeding", requires: null },
+      { name: "foot pain", requires: null }
+    ],
+    treatment: ["bandage", "blood", "painkiller"]
+  },
+  {
+    name: "thigh gunshot",
+    symptoms: [
+      { name: "thigh bleeding", requires: null },
+      { name: "thigh pain", requires: null }
+    ],
+    treatment: ["bandage", "blood", "painkiller"]
+  },
+  {
+    name: "forearm gunshot",
+    symptoms: [
+      { name: "forearm bleeding", requires: null },
+      { name: "forearm pain", requires: null }
+    ],
+    treatment: ["bandage", "blood", "painkiller"]
+  },
+  {
+    name: "thigh stabbing",
+    symptoms: [
+      { name: "thigh bleeding", requires: null },
+      { name: "thigh pain", requires: null }
+    ],
+    treatment: ["bandage", "blood", "painkiller"]
+  },
+  {
+    name: "lower leg stabbing",
+    symptoms: [
+      { name: "lower leg bleeding", requires: null },
+      { name: "lower leg pain", requires: null }
+    ],
+    treatment: ["bandage", "blood", "painkiller"]
+  },
+  {
+    name: "upper arm stabbing",
+    symptoms: [
+      { name: "upper arm bleeding", requires: null },
+      { name: "upper arm pain", requires: null }
+    ],
+    treatment: ["bandage", "blood", "painkiller"]
+  },
+  {
+    name: "neck cut",
+    symptoms: [
+      { name: "neck bleeding", requires: null },
+      { name: "neck pain", requires: null }
+    ],
+    treatment: ["bandage", "painkiller"]
+  },
+  {
+    name: "abdomen cut",
+    symptoms: [
+      { name: "abdominal bleeding", requires: null },
+      { name: "abdominal pain", requires: null }
+    ],
+    treatment: ["bandage", "painkiller"]
+  },
+  {
+    name: "hand cut",
+    symptoms: [
+      { name: "hand bleeding", requires: null },
+      { name: "hand pain", requires: null }
+    ],
+    treatment: ["bandage", "painkiller"]
+  },
+  {
+    name: "foot cut",
+    symptoms: [
+      { name: "foot bleeding", requires: null },
+      { name: "foot pain", requires: null }
+    ],
+    treatment: ["bandage", "painkiller"]
+  },
+  {
+    name: "lower leg cut",
+    symptoms: [
+      { name: "lower leg bleeding", requires: null },
+      { name: "lower leg pain", requires: null }
+    ],
+    treatment: ["bandage", "painkiller"]
+  },
+  {
+    name: "forearm cut",
+    symptoms: [
+      { name: "forearm bleeding", requires: null },
+      { name: "forearm pain", requires: null }
+    ],
+    treatment: ["bandage", "painkiller"]
+  },
+  {
+    name: "upper arm cut",
+    symptoms: [
+      { name: "upper arm bleeding", requires: null },
+      { name: "upper arm pain", requires: null }
+    ],
+    treatment: ["bandage", "painkiller"]
+  },
+  {
+    name: "neck bruising",
+    symptoms: [
+      { name: "neck pain", requires: null },
+      { name: "neck muscle ache", requires: null },
+      { name: "neck bruising", requires: "stethoscope" },
+      { name: "neck swelling", requires: "stethoscope" }
+    ],
+    treatment: ["painkiller"]
+  },
+  {
+    name: "baton bruising",
+    symptoms: [
+      { name: "bruising", requires: null },
+      { name: "pain", requires: null }
+    ],
+    treatment: ["painkiller"]
   }
 ];
