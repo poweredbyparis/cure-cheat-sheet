@@ -1521,13 +1521,5 @@ const conditions = [
       { name: "neck swelling", requires: "stethoscope" }
     ],
     treatment: ["painkiller"]
-  },
-  {
-    name: "baton bruising",
-    symptoms: [
-      { name: "bruising", requires: null },
-      { name: "pain", requires: null }
-    ],
-    treatment: ["painkiller"]
   }
 ];
