@@ -138,7 +138,7 @@ body.light .bg-grid { opacity: 0.3; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 24px;
+  padding: 0 24px 0 14px;
   border-bottom: 1px solid var(--border);
   background: var(--bg-panel);
   backdrop-filter: blur(16px);
