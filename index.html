@@ -1,92 +1,116 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Unofficial Cure Cheat Sheet</title>
-
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cure - Unofficial Cheat Sheet</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Barlow+Condensed:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20,300,0,0" rel="stylesheet">
 
   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body data-theme="dark">
+<body>
 
-  <!-- header -->
+  <div class="bg-grid"></div>
+  <div class="bg-vignette"></div>
+
   <header id="header">
-    <div class="header-left">
-      <!-- <div id="user-count"></div> -->
+    <div class="header-brand">
+      <div class="logo-wrap">
+        <img src="img/logo-white.webp" id="logo-img" alt="Cure">
+        <span class="version-badge">v2.0</span>
+      </div>
+      <p class="header-tagline">Diagnosis Reference</p>
     </div>
 
-    <div class="header-center">
-      <div class="logo-wrap">
-        <img src="img/logo-white.webp" id="logo-img">
-        <span class="version-badge">v1.0.0</span>
+    <div class="header-stats">
+      <div class="stat-pill" id="stat-total">
+        <span class="stat-num" id="count-total">0</span>
+        <span class="stat-label">conditions</span>
+      </div>
+      <div class="stat-pill" id="stat-match">
+        <span class="stat-num" id="count-match">0</span>
+        <span class="stat-label">matched</span>
+      </div>
+      <div class="stat-pill stat-pill--online" id="stat-online">
+        <span class="online-dot"></span>
+        <span class="stat-num" id="count-online">—</span>
+        <span class="stat-label">active doctors</span>
       </div>
     </div>
 
-    <div class="header-right">
-      <button id="theme-switch">
+    <div class="header-actions">
+      <button id="theme-switch" title="Toggle theme" aria-label="Toggle theme">
         <span class="material-symbols-rounded">emoji_objects</span>
       </button>
     </div>
   </header>
 
-  <!-- main -->
   <main id="main">
-    <aside class="panel left-panel">
-      <div class="panel-header">
-        <h2>SYMPTOMS</h2>
+
+    <aside id="sidebar">
+      <div class="sidebar-header">
+        <h2 class="panel-title">SYMPTOMS</h2>
+        <div class="search-wrap">
+          <span class="material-symbols-rounded search-icon">search</span>
+          <input type="text" id="symptom-search" placeholder="Search symptoms…" autocomplete="off" spellcheck="false">
+          <button id="search-clear" class="search-clear hidden" title="Clear">
+            <span class="material-symbols-rounded">close</span>
+          </button>
+        </div>
         <div id="filters-tabs"></div>
       </div>
-      <div id="filters" class="panel-content"></div>
+      <div id="filters" class="sidebar-body"></div>
     </aside>
 
-    <section class="panel right-panel">
-      <div class="panel-header">
-        <h2>CONDITIONS</h2>
+    <section id="results-panel">
+      <div class="results-header">
+        <h2 class="panel-title">CONDITIONS</h2>
+        <div class="results-controls">
+          <span id="sort-label">Sort:</span>
+          <button class="sort-btn active" data-sort="alpha">A–Z</button>
+          <button class="sort-btn" data-sort="symptoms">Symptoms</button>
+          <button class="sort-btn" data-sort="treatment">Treatments</button>
+        </div>
       </div>
-      <div id="results" class="panel-content"></div>
+      <div id="results"></div>
     </section>
   </main>
 
-  <!-- footer -->
   <footer id="footer">
-    <div id="footer-link">Copyright / About</div>
+    <span id="footer-link">
+      <span class="material-symbols-rounded" style="font-size:13px;vertical-align:-2px">info</span>
+      About & Copyright
+    </span>
   </footer>
 
-  <!-- modal -->
-  <div id="footer-modal" class="modal hidden">
+  <div id="footer-modal" class="modal hidden" role="dialog" aria-modal="true">
     <div class="modal-content">
-      <span id="modal-close">&times;</span>
-
-      <h4>About</h4>
-      <p> This cheat sheet was created as an educational tool for <b>Cure - A Hospital Simulator</b>, aimed at supporting more efficient diagnosis and treating patients in the game. </p>
-      <p> The information presented is derived from in-game observation, testing, and community-verified patterns. While every effort has been made to ensure accuracy, no official confirmation has been provided by the game's developers or moderators. </p>
-      
-      <h4>Copyright & Disclaimer</h4>
-      <p> Cure - A Hospital Simulator, including its name, assets, and related materials, are the property of their respective owners. This project does not claim ownership of any game content. </p>
-      <p> This tool is an independent, fan-made resource and is not affiliated with, endorsed by, or connected to the developers or publishers of the game. </p>
-      <p> The layout, structure, and supporting logic of this cheat sheet are original works created for this project with the help of articifial intelligence. </p>
-      
-      <h4>Credits</h4>
-      <p> Special thanks to <a href="https://www.twitch.tv/emryswastaken" target="_blank"><b>EmrysWasTaken</b></a> and the Cure community who contributed directly or indirectly. </p>
-    
-      <h4>Feedback</h4>
-      <p>
-        Find a mistake or something missing? DM me on Discord: <a href="https://discord.com/users/887199851740266547" target="_blank"><b>@poweredbyparis</b></a>
-      </p>
+      <button id="modal-close" aria-label="Close">
+        <span class="material-symbols-rounded">close</span>
+      </button>
+      <h3>About</h3>
+      <p>An educational reference tool for <strong>Cure — A Hospital Simulator</strong>. Helps players quickly identify conditions and treatments during diagnosis.</p>
+      <p>Data is derived from in-game observation, testing, and community-verified patterns. Not officially affiliated with or endorsed by the game's developers.</p>
+      <h3>Copyright</h3>
+      <p>Cure — A Hospital Simulator and all related assets are property of their respective owners. This is an independent, fan-made resource.</p>
+      <h3>Credits</h3>
+      <p>Special thanks to <a href="https://www.twitch.tv/emryswastaken" target="_blank">EmrysWasTaken</a> and the Cure community.</p>
+      <h3>Feedback</h3>
+      <p>Find a mistake? DM on Discord: <a href="https://discord.com/users/887199851740266547" target="_blank">@poweredbyparis</a></p>
     </div>
   </div>
 
   <script src="data.js"></script>
   <script src="script.js"></script>
+
+  <!-- Firebase presence -->
+  <script type="module" src="firebase.js"></script>
 
 </body>
 </html>
