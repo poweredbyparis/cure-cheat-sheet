@@ -25,19 +25,36 @@ const commonSymptoms = new Set([
   "fever","pain","muscle ache"
 ]);
 
-/* ── Treatment color palette ──────────────────── */
-const treatmentColors = {
-  "antibiotic":   "#c084fc",
-  "anti nausea":  "#34d399",
-  "hydration":    "#60a5fa",
-  "education":    "#a78bfa",
-  "sedative":     "#86efac",
+/* ── Treatment color palettes ─────────────────── */
+const treatmentColorsDark = {
+  "antibiotic":   "#ff57ff",
+  "anti nausea":  "#5fa740",
+  "hydration":    "#5b98ff",
+  "education":    "#b548ff",
+  "sedative":     "#97fb97",
   "painkiller":   "#fb923c",
   "bandage":      "#fda4af",
-  "blood":        "#f87171",
+  "blood":        "#ff4e4e",
   "cast":         "#2dd4bf",
   "decongestant": "#fde047"
 };
+
+const treatmentColorsLight = {
+  "antibiotic":   "#ff00ff",
+  "anti nausea":  "#2a6212",
+  "hydration":    "#4a85e8",
+  "education":    "#9800ff",
+  "sedative":     "#59cd59",
+  "painkiller":   "#fa860e",
+  "bandage":      "#f3a5a5",
+  "blood":        "#dd0000",
+  "cast":         "#36cbbc",
+  "decongestant": "#cece00"
+};
+
+function getColors() {
+  return document.body.classList.contains("light") ? treatmentColorsLight : treatmentColorsDark;
+}
 
 /* ── Helpers ──────────────────────────────────── */
 function normalize(str) {
@@ -315,7 +332,7 @@ function render() {
 
     (c.treatment || []).forEach(t => {
       const norm = normalize(t);
-      const color = treatmentColors[norm] || "#888";
+      const color = getColors()[norm] || "#888";
 
       const pill = document.createElement("div");
       pill.className = "treat-pill";
@@ -376,6 +393,7 @@ applyTheme(theme);
 themeSwitch.onclick = () => {
   theme = theme === "dark" ? "light" : "dark";
   applyTheme(theme);
+  render();
 };
 
 /* ── Init ─────────────────────────────────────── */
